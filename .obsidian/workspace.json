@@ -4,37 +4,115 @@
     "type": "split",
     "children": [
       {
-        "id": "4db63ad4935cbb35",
+        "id": "792fc26a4093e43a",
         "type": "tabs",
         "children": [
           {
-            "id": "c244d1713e4a88a6",
+            "id": "ed4266c7752fafd7",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "point cloud/Week 38.md"
+              }
+            }
+          },
+          {
+            "id": "ef465083fe0e43a6",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Lidar for autonomous driving.canvas",
+                "viewState": {
+                  "x": 427.72239649739157,
+                  "y": -282.7645906735856,
+                  "zoom": -0.9610327562233922
+                }
+              }
+            }
+          },
+          {
+            "id": "d16f535b956a9ff5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "point cloud/pointpillars anchor related apollo.md",
+                "file": "point cloud/Algorithms.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "04bc32ab77c56f23",
+            "id": "761dc0ecae67922e",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "canvas/JF.canvas",
+                "file": "Lidar for autonomous driving.canvas",
                 "viewState": {
-                  "x": 6932.808136020345,
-                  "y": 2745.9067462929165,
-                  "zoom": -0.8809565504391974
+                  "x": 640,
+                  "y": -220,
+                  "zoom": -2.4344852615070667
                 }
+              }
+            }
+          },
+          {
+            "id": "3b37d7fe8fad3583",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "start/PointNet.pdf"
+              }
+            }
+          },
+          {
+            "id": "e39cdb617d9f6257",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "point cloud/faster r-cnn.pdf"
+              }
+            }
+          },
+          {
+            "id": "3694db9f0fb10e95",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "point cloud/Voxelnet.pdf"
+              }
+            }
+          },
+          {
+            "id": "411644deaec47526",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "start/PointPillars- Fast Encoders for Object Detection from Point Clouds.pdf"
+              }
+            }
+          },
+          {
+            "id": "673830890039f033",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "point cloud/Point Cloud.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
         ],
+        "currentTab": 3,
         "stacked": true
       }
     ],
@@ -85,8 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 258.5,
-    "collapsed": true
+    "width": 258.5
   },
   "right": {
     "id": "c7815b91d911e1a1",
@@ -102,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "point cloud/pointpillars anchor related apollo.md",
+                "file": "Lidar for autonomous driving.canvas",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -119,7 +196,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "point cloud/pointpillars anchor related apollo.md",
+                "file": "Lidar for autonomous driving.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -142,7 +219,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "point cloud/pointpillars anchor related apollo.md"
+                "file": "Lidar for autonomous driving.canvas"
               }
             }
           },
@@ -176,60 +253,62 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c244d1713e4a88a6",
+  "active": "1ad28d41b5239252",
   "lastOpenFiles": [
-    "canvas/JF.canvas",
-    "point cloud/pointpillars anchor related apollo.md",
-    "pointpillars anchor-related apollo.canvas",
-    "canvas/apollo.canvas",
-    "point cloud/GenerateAnchors.md",
-    "point cloud/DoPostProcessCuda.md",
-    "point cloud/sort_boxes_by_indexes_kernel.md",
-    "point cloud/filter_kernel.md",
-    "canvas/apollo_副本.canvas",
-    "point cloud/Note 230808.md",
-    "daily note/2023-08-07.md",
-    "start/PointNet.pdf",
-    "point cloud/faster r-cnn.pdf",
-    "point cloud/Voxelnet.pdf",
-    "point cloud/second.pdf",
-    "point cloud/未确认 961758.crdownload",
     "point cloud/Pointnet++.pdf",
-    "start/SSD- Single Shot MultiBox Detector.pdf",
-    "point cloud/putAnchorsInDeviceMemory().md",
-    "point cloud/convertAnchors2BoxAnchors().md",
-    "point cloud/InitAnchors().md",
-    "daily note/2023-07-27.md",
+    "Lidar for autonomous driving.canvas",
+    "point cloud/Algorithms.md",
+    "attachments/Pasted image 20230912155924.png",
     "start/PointPillars- Fast Encoders for Object Detection from Point Clouds.pdf",
+    "point cloud/Point Cloud.md",
+    "attachments/Pasted image 20230912154535.png",
+    "point cloud/Voxelnet.pdf",
+    "start/PointNet.pdf",
     "Excalidraw/pointpillars.excalidraw.md",
+    "point cloud/Week 38.md",
+    "attachments/Pasted image 20230912103647.png",
+    "attachments/Pasted image 20230912103630.png",
+    "point cloud/faster r-cnn.pdf",
+    "Excalidraw/comparation make_pillar_histo_kernel.md",
+    "point cloud/Deployment.md",
+    "attachments/Pasted image 20230912082257.png",
+    "daily note/2023-09-11.md",
+    "deep learning.canvas",
+    "hardware.canvas",
+    "canvas/JF.canvas",
+    "point cloud/scatter_kernel().md",
+    "start/Batch Norm Explained Visually — How it works, and why neural networks need it.md",
+    "start/range.md",
+    "start/Road-Segmentation based Curb Detection Method for Self-driving via a 3D-LiDAR Sensor.pdf",
+    "start/Sobel梯度算子.md",
+    "start/upsampling.md",
+    "start/VGG.md",
+    "ground filtering code.canvas",
+    "canvas/apollo.canvas",
+    "point cloud/Hardware.md",
+    "point cloud/Datasets.md",
+    "daily note/2023-09-05.md",
+    "daily note/2023-09-06.md",
+    "daily note/2023-08-30.md",
+    "point cloud/shuffle.md",
+    "point cloud/车间实习.md",
+    "dataset/kitti/Three-Dimensional Scene Flow.pdf",
+    "point cloud/scene flow.md",
+    "point cloud/kitti.md",
+    "dataset/kitti/未确认 603702.crdownload",
+    "dataset/kitti/Vision meets Robotics- The KITTI Dataset.pdf",
+    "dataset/kitti/Object Scene Flow for Autonomous Vehicles.pdf",
+    "attachments/Pasted image 20230823093448.png",
+    "attachments/Pasted image 20230823085110.png",
+    "point cloud/激光雷达感知模块项目文档.md",
+    "PyTorch For Deep Learning — Feed Forward Neural Network.md",
+    "pointpillars anchor-related apollo.canvas",
+    "start/the least trimmed squares regression method.md",
+    "canvas/apollo_副本.canvas",
     "attachments/Pasted Image 20230725150846_368.png",
     "attachments/Pasted Image 20230725144901_015.png",
     "attachments/Pasted Image 20230725144831_007.png",
-    "point cloud/未确认 354980.crdownload",
-    "point cloud/未确认 123027.crdownload",
-    "point cloud/Voxelnet.md",
-    "attachments/Pasted image 20230724160353.png",
-    "attachments/Pasted image 20230724151518.png",
-    "point cloud/激光雷达感知模块项目文档.md",
-    "attachments/点的索引.png",
-    "attachments/Pasted image 20230721085504.png",
-    "point cloud/class PillarFeatureNet.md",
-    "point cloud/1x1 Convolutions Demystified.md",
-    "attachments/Pasted Image 20230718092904_275.png",
-    "attachments/Pasted Image 20230718091853_338.png",
-    "point cloud/NIPS-2015-spatial-transformer-networks-Paper.md",
-    "attachments/Pasted image 20230717162132.png",
-    "point cloud/TensorRT C++ API.md",
-    "start/Pointpillars slides.md",
-    "daily note/2023-07-17.md",
-    "Excalidraw/comparation make_pillar_histo_kernel.md",
-    "point cloud/CUDA programming.md",
-    "start/the least trimmed squares regression method.md",
-    "point cloud/基于2.5D map计算网格内点的表面梯度.md",
     "canvas/Ground Segmentation Methods for AutomotiveLiDAR Sensors.canvas",
-    "start/端到端学习.md",
-    "deep learning.canvas",
-    "apollo.canvas",
-    "Ground Segmentation Methods for AutomotiveLiDAR Sensors.canvas"
+    "apollo.canvas"
   ]
 }

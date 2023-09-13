@@ -1,7 +1,8 @@
 {
-  "readableLineLength": false,
+  "readableLineLength": true,
   "attachmentFolderPath": "attachments",
   "newFileLocation": "folder",
   "newFileFolderPath": "point cloud",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "strictLineBreaks": false
 }
