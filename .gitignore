@@ -2,3 +2,5 @@ workspace.json
 Workspaces.json
 Workspace-mobile.json
 .DS_Store
+# Ignore the .obsidian directory
+.obsidian/
