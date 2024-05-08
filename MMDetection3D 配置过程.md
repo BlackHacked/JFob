@@ -1,10 +1,11 @@
-# 基本配置情况
+# 环境配置
+## 基本配置信息
 driver 版本：535.154.05
 ![[Pasted image 20240430105501.png]]
 cuda 版本：V11.8.89
 ![[Pasted image 20240430105513.png]]
 
-# pytorch
+## pytorch安装
 ## 安装过程
 ```bash
 conda create --name openmmlab
@@ -18,7 +19,7 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvi
 
 >安装结果检查![[Pasted image 20240430143043.png]]
 
-# 环境部署验证
+## 环境验证
 ![[Pasted image 20240430143119.png]]
 
 # 使用 [MIM](https://github.com/open-mmlab/mim) 安装 [MMEngine](https://github.com/open-mmlab/mmengine)，[MMCV](https://github.com/open-mmlab/mmcv) 和 [MMDetection](https://github.com/open-mmlab/mmdetection)
@@ -59,7 +60,7 @@ pip install -v -e .
 "-v" 指详细说明，或更多的输出
 "-e" 表示在可编辑模式下安装项目，因此对代码所做的任何本地修改都会生效，从而无需重新安装。
 
-# MMdetection3D安装验证
+## MMdetection3D安装验证
 1. 下载配置文件和模型权重文件
 ```bash
 mim download mmdet3d --config pointpillars_hv_secfpn_8xb6-160e_kitti-3d-car --dest .
@@ -74,26 +75,54 @@ python demo/pcd_demo.py demo/data/kitti/000008.bin pointpillars_hv_secfpn_8xb6-1
 结果保存在./outputs/pred/000008.json
 
 # 数据集准备
-把kitti数据集放在
+把kitti数据集放在mmdetection3d/data/kitti/
 
-#
+# 训练
+## 超参数编辑
+```bash
+cd configs/pointpillars/
+vim pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py
+```
 
+以下参数设置供参考
+```python
+lr = 0.05
+epoch_num = 40
+train_cfg = dict(by_epoch=True, max_epochs=epoch_num, val_interval=2)
+```
+## 命令
+```bash
+python ./tools/train.py ./configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py
+```
+>建议使用nohup/tmux
 
-在 `pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py` 配置文件里，将 `objectSample` 的 `use_ground_plane` 参数设置为 `False` 的步骤如下：
-
-1. 打开 `pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py` 配置文件。
-    
-2. 找到 `train_pipeline` 部分，其中应该包含一个数据增强或预处理步骤，比如 `ObjectSample`。
-    
-3. 在这个数据增强步骤里，将 `use_ground_plane` 参数设置为 `False`。例如：
-    
-    python
-    
-    Copy code
-    
-    `train_pipeline = [     # 其他预处理或数据增强步骤     dict(         type='ObjectSample',         use_ground_plane=False,         # 其他相关配置参数     ),     # 其他预处理或数据增强步骤 ]`
-
-# 
+## 分类和边界框损失曲线
 ```bash
 python tools/analysis_tools/analyze_logs.py plot_curve work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/20240508_100452/vis_data/20240508_100452.json --keys loss_cls loss_bbox
+```
+> 需要把work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/20240508_100452/vis_data/20240508_100452.json 修改为训练时间对应的路径
+
+## 问题解决
+>1.  AssertionError: `use_ground_plane` is True but find plane is None
+
+在 `pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py` 配置文件里，将 `objectSample` 的 `use_ground_plane` 参数设置为 `False` 的步骤如下：
+1. 打开 `pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py` 配置文件。
+2. 找到 `train_pipeline` 部分，其中应该包含一个数据增强或预处理步骤，比如 `ObjectSample`。
+3. 将 `use_ground_plane` 参数设置为 `False`。
+```python
+    train_pipeline = [      
+    dict(         type='ObjectSample',         use_ground_plane=False,         # 其他相关配置参数     
+    ),    
+      ]`
+```
+
+# 测试
+## 
+
+```python
+python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FILE}] [--eval ${EVAL_METRICS}] [--show] [--show-dir ${SHOW_DIR}]
+```
+
+```python
+python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth --work-dir ./data/result_output/out_dir/3dssd.pkl  --cfg-options 'show=True' 'out_dir=./data/result_output/show_result'
 ```
