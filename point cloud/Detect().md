@@ -66,3 +66,13 @@ bool PointPillarsDetection::Detect(const DetectionOptions& options, LidarFrame* 
 }
 
 ```
+1. 输入检查:确保输入的LidarFrame和点云不为空。
+2. 保存原始点云,后续转换用。
+3. 清空原有检测结果。
+4. 设置GPU设备。
+5. 将点云转换为数组格式,作为推理函数输入。
+6. 调用doInference执行模型推理,得到检测框结果。
+7. 将推理结果转换为Object格式的检测结果。
+8. 释放临时数组。
+9. 记录并打印推理时间。
+10. 返回检测状态。

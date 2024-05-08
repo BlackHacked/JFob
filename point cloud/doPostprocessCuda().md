@@ -7,7 +7,7 @@ void PostprocessCuda::doPostprocessCuda(
     const float* rpn_box_output,  // RPN网络的边界框输出
     const float* rpn_cls_output,  // RPN网络的分类输出
     const float* rpn_dir_output,  // RPN网络的方向输出
-    int* dev_anchor_mask,  // 锚点保留标志数组
+    int* dev_anchor_mask,  // 锚点掩码
     const float* dev_anchors_px,  // 锚点的x坐标数组
     const float* dev_anchors_py,  // 锚点的y坐标数组
     const float* dev_anchors_pz,  // 锚点的z坐标数组
@@ -21,7 +21,7 @@ void PostprocessCuda::doPostprocessCuda(
     float* dev_box_for_nms,  // 用于NMS操作的边界框数组
     int* dev_filter_count,  // 过滤计数
     std::vector<float>* out_detection) {  // 输出检测结果的容器
- // 调用CUDA的过滤核函数进行边界框过滤操作（按置信度过滤的）
+ // 调用CUDA的过滤核函数进行边界框过滤操作（按置信度过滤）
   filter_kernel<<<NUM_ANCHOR_X_INDS_ * NUM_ANCHOR_R_INDS_,
                   NUM_ANCHOR_Y_INDS_>>>(
       rpn_box_output, rpn_cls_output, rpn_dir_output, dev_anchor_mask,
@@ -73,7 +73,7 @@ ForwardIterator 	last
 //                       dev_indexes, thrust::greater<float>());
 
   const int num_blocks = DIVUP(host_filter_count[0], NUM_THREADS_);
-  //对过滤后的边界框和方向进行按索引排序（给生成的边界框一个顺序，方便做nms）
+  //对过滤后的边界框和方向进行按索引排序
   sort_boxes_by_indexes_kernel<<<num_blocks, NUM_THREADS_>>>(
       dev_filtered_box, dev_filtered_dir, dev_box_for_nms, dev_indexes,
       host_filter_count[0], dev_sorted_filtered_box, dev_sorted_filtered_dir,
@@ -82,7 +82,7 @@ ForwardIterator 	last
   int keep_inds[host_filter_count[0]];
   keep_inds[0] = 0;
   int out_num_objects = 0;
-  //对排序后的NMS边界框进行非最大抑制
+  //对排序后的NMS边界框做非最大抑制
   nms_cuda_ptr_->doNMSCuda(host_filter_count[0], dev_sorted_box_for_nms,
                            keep_inds, &out_num_objects);
 
@@ -126,3 +126,11 @@ ForwardIterator 	last
   GPU_CHECK(cudaFree(dev_sorted_box_for_nms));
 }
 ```
+```
+1. 调用filter_kernel过滤低分框,只保留置信度高的框。
+2. 为保留下来的框生成索引。
+3. 根据索引对框进行排序。
+4. 调用NMS算法进行非极大抑制。
+5. 将排序并做完NMS的框复制到CPU内存。
+6. 根据NMS的保留索引,从排序好的框中取出需要的框信息,形成最终检测结果。
+7. 释放GPU内存。

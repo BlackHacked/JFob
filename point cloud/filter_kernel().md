@@ -7,7 +7,7 @@ __global__ void filter_kernel(
     const float* box_preds,  // 预测的边界框数组
     const float* cls_preds,  // 预测的分类数组
     const float* dir_preds,  // 预测的方向数组
-    const int* anchor_mask,  // 锚点保留标志数组
+    const int* anchor_mask, //锚框掩码
     const float* dev_anchors_px,  // 锚点的x坐标数组
     const float* dev_anchors_py,  // 锚点的y坐标数组
     const float* dev_anchors_pz,  // 锚点的z坐标数组
@@ -16,7 +16,7 @@ __global__ void filter_kernel(
     const float* dev_anchors_dz,  // 锚框的高度数组
     const float* dev_anchors_ro,  // 锚点的旋转角度数组
     float* filtered_box,  // 过滤后的边界框数组
-    float* filtered_score,  // 过滤后的得分数组
+    float* filtered_score,  // 过滤后的置信度数组
     int* filtered_dir,  // 过滤后的方向数组
     float* box_for_nms,  // 用于NMS操作的边界框数组
     int* filter_count,  // 过滤计数
@@ -113,3 +113,11 @@ __global__ void filter_kernel(
   }
 }
 ```
+1. 计算当前锚框的置信度score。
+2. 判断置信度是否超过阈值及锚框是否需要保留,如果满足则进行过滤。
+3. 原子加操作获取当前保留框的索引counter。
+4. 解码RPN输出,获取完整的预测框信息。
+5. 调整高度信息,把框调整到底面。
+6. 更新过滤后的框/置信度/方向数组。
+7. 将三维框转换为二维框,用于后续NMS计算。
+8. 更新作为NMS输入的二维框数组box_for_nms。

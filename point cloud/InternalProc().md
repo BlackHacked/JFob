@@ -4,7 +4,7 @@ tags: function
 ```cpp
 bool DetectionComponent::InternalProc(const std::shared_ptr<const drivers::PointCloud>& in_message,
                                       const std::shared_ptr<LidarFrameMessage>& out_message) {
-//获取互斥锁和序列号 ？？？？
+//获取互斥锁和序列号
 PERCEPTION_PERF_FUNCTION_WITH_INDICATOR(sensor_name_);
   {
     std::unique_lock<std::mutex> lock(s_mutex_);

@@ -3,19 +3,24 @@ tags: function
 ---
 /modules/perception/lidar/lib/detection/lidar_point_pillars/point_pillars_detection.cc
 ```cpp
-void PointPillarsDetection::GetObjects(std::vector<std::shared_ptr<Object>>* objects, const Eigen::Affine3d& pose,
-                                       std::vector<float>* detections) {
+void PointPillarsDetection::GetObjects(std::vector<std::shared_ptr<Object>>* objects, 
+									   const Eigen::Affine3d& pose,
+                                       std::vector<float>* detections//原始检测框
+                                       ) {
   Timer timer;
+  //获取对象池
   int num_objects = detections->size() / kOutputNumBoxFeature;
 
   objects->clear();
   base::ObjectPool::Instance().BatchGet(num_objects, objects);
 
+//遍历检测框
   for (int i = 0; i < num_objects; ++i) {
     auto& object = objects->at(i);
     object->id = i;
 
     // read params of bounding box
+    //读取框的参数
     float x = detections->at(i * kOutputNumBoxFeature + 0);
     float y = detections->at(i * kOutputNumBoxFeature + 1);
     float z = detections->at(i * kOutputNumBoxFeature + 2);
@@ -85,4 +90,11 @@ void PointPillarsDetection::GetObjects(std::vector<std::shared_ptr<Object>>* obj
 
   collect_time_ = timer.toc(true);
 }
+
 ```
+1. 获取需要输出的Object数量num_objects,并从对象池中批量获取Object实例到objects容器中。
+2. 遍历每一个检测框,读取箱体8个顶点的坐标信息,转换到世界坐标系。
+3. 为每个Object填充lidar_supplement中的相关数据,如顶点云、朝向角等。
+4. 填充object的类型probs用于表示类别概率,这里因为只检测车,所以vehicle类型概率为1.0。
+5. 根据类型概率最大值设置object的类型type。
+6. 最后记录整个转换过程的时间。

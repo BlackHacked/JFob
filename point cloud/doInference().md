@@ -35,10 +35,10 @@ void PointPillars::doInference(const float* in_points_array, const int in_num_po
 
 //将dev_scattered_feature_这块GPU(设备端)内存使用cudaMemset设置为0,长度为RPN_INPUT_SIZE_ * sizeof(float)字节
   GPU_CHECK(cudaMemset(dev_scattered_feature_, 0, RPN_INPUT_SIZE_ * sizeof(float)));
-//调用doScatterCuda函数，给有点的柱一个索引
+//调用doScatterCuda函数，生成伪图像
   scatter_cuda_ptr_->doScatterCuda(host_pillar_count_[0], dev_x_coors_, dev_y_coors_, reinterpret_cast<float*>(pfe_buffers_[8]),
                                    dev_scattered_feature_);
-//将dev_scattered_feature_(有点的柱的索引图)复制到RPN缓存rpn_buffers_[0],利用CUDA流(stream)实现异步复制
+//将dev_scattered_feature_(伪图像)复制到RPN缓存rpn_buffers_[0],利用CUDA流(stream)实现异步复制
   GPU_CHECK(cudaMemcpyAsync(rpn_buffers_[0], dev_scattered_feature_, BATCH_SIZE_ * RPN_INPUT_SIZE_ * sizeof(float),
                             cudaMemcpyDeviceToDevice, stream));
 //将rpn_buffers_添加到CUDA流中计算
@@ -56,3 +56,12 @@ void PointPillars::doInference(const float* in_points_array, const int in_num_po
   cudaStreamDestroy(stream);
 }
 ```
+1. 调用preprocess()对点云数据进行预处理。
+2. 生成anchor mask。
+3. 将预处理的数据复制到PFE(Point Feature Extractor)的输入buffers。
+4. 使用TensorRT执行PFE推理,得到pillar特征。
+5. 将pillar特征scatter到伪图像上,得到RPN网络的输入。
+6. 将伪图像复制到RPN的输入buffers。
+7. 使用TensorRT执行RPN推理,生成原始的检测框（分类，方向，边界框）
+8. 调用后处理函数doPostprocessCuda,对RPN输出进行解码和NMS,生成最终检测框结果。
+9. 释放CUDA流和中间buffers。

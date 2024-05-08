@@ -1,9 +1,11 @@
 {
-  "accentColor": "",
-  "cssTheme": "Minimal",
-  "theme": "system",
-  "baseFontSize": 13,
+  "accentColor": "#816ebf",
+  "cssTheme": "",
+  "theme": "obsidian",
+  "baseFontSize": 18,
   "enabledCssSnippets": [
     "page-width"
-  ]
+  ],
+  "translucency": false,
+  "monospaceFontFamily": "Arial,Inter"
 }

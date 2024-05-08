@@ -17,16 +17,17 @@ void PreprocessPointsCuda::doPreprocessPointsCuda(
   GPU_CHECK(cudaMemset(dev_pillar_count_, 0, sizeof(int)));
 
   //DIVUP()除法向上取整
-  //NUM_THREADS_:number of threads when launching cuda kernel
-  //num_block:总点数除运行核函数需要的线程数是需要使用的线程块数量，向上取整确保数量足够
+  //NUM_THREADS_:number of threads when launching cuda kernel，是block的大小，就是线程的数量
+  //num_block:是grid的大小，即block的数量。总点数除运行核函数需要的线程数是需要使用的线程块数量，向上取整确保数量足够
   int num_block = DIVUP(in_num_points, NUM_THREADS_);
+  //核函数会运行block*thread,即总点数次
   make_pillar_histo_kernel<<<num_block, NUM_THREADS_>>>(
       dev_points, dev_pillar_x_in_coors_, dev_pillar_y_in_coors_,
       dev_pillar_z_in_coors_, dev_pillar_i_in_coors_, dev_pillar_count_histo_,
       in_num_points, MAX_NUM_POINTS_PER_PILLAR_, GRID_X_SIZE_, GRID_Y_SIZE_,
       GRID_Z_SIZE_, MIN_X_RANGE_, MIN_Y_RANGE_, MIN_Z_RANGE_, PILLAR_X_SIZE_,
       PILLAR_Y_SIZE_, PILLAR_Z_SIZE_, NUM_BOX_CORNERS_);
-
+//函数执行GRID_X_SIZE_(x方向格数) * GRID_Y_SIZE_(y方向格数)，总格数次
   make_pillar_index_kernel<<<GRID_X_SIZE_, GRID_Y_SIZE_>>>(
       dev_pillar_count_histo_, dev_counter_, dev_pillar_count_, dev_x_coors,
       dev_y_coors, dev_x_coors_for_sub_, dev_y_coors_for_sub_,
@@ -49,13 +50,13 @@ cudaMemcpyDefault = 4
 Direction of the transfer is inferred from the pointer values. Requires unified virtual addressin*/
   GPU_CHECK(cudaMemcpy(host_pillar_count, dev_pillar_count_, sizeof(int),
                        cudaMemcpyDeviceToHost));
-
+//函数执行pillar数*每个pillar的点数，即总点数次
   make_pillar_feature_kernel<<<host_pillar_count[0], MAX_NUM_POINTS_PER_PILLAR_>>>(
       dev_pillar_x_in_coors_, dev_pillar_y_in_coors_, dev_pillar_z_in_coors_,
       dev_pillar_i_in_coors_, dev_pillar_x, dev_pillar_y, dev_pillar_z,
       dev_pillar_i, dev_x_coors, dev_y_coors, dev_num_points_per_pillar,
       MAX_NUM_POINTS_PER_PILLAR_, GRID_X_SIZE_);
-
+//函数执行设定的最大pillar数*每个pillar的最大点数，即最大点数次
   make_extra_network_input_kernel<<<MAX_NUM_PILLARS_, MAX_NUM_POINTS_PER_PILLAR_>>>(
       dev_x_coors_for_sub_, dev_y_coors_for_sub_, dev_num_points_per_pillar,
       dev_x_coors_for_sub_shaped, dev_y_coors_for_sub_shaped,

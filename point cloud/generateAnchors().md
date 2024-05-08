@@ -1,9 +1,9 @@
 ---
 tags: function
 ---
+modules/perception/lidar/lib/detection/lidar_point_pillars/point_pillars.cc
 ```cpp
-void PointPillars::generateAnchors(float* anchors_px_, float* anchors_py_, float* anchors_pz_, float* anchors_dx_, float* anchors_dy_,
-                                   float* anchors_dz_, float* anchors_ro_) {
+void PointPillars::generateAnchors(float* anchors_px_, float* anchors_py_, float* anchors_pz_, float* anchors_dx_, float* anchors_dy_, float* anchors_dz_, float* anchors_ro_) {
   // zero clear
   for (int i = 0; i < NUM_ANCHOR_; i++) {
     anchors_px_[i] = 0;
@@ -26,7 +26,7 @@ void PointPillars::generateAnchors(float* anchors_px_, float* anchors_py_, float
   float y_offset = MIN_Y_RANGE_ + PILLAR_Y_SIZE_;
 
   // 计算锚点的计数数组
-  float anchor_x_count[NUM_ANCHOR_X_INDS_];
+  float anchor_x_count[NUM_ANCHOR_X_INDS_];//数组长度是一半x方向上的格数
   anchor_x_count[0] = 0;
   for (int i = 0; i < NUM_ANCHOR_X_INDS_; i++) {
     anchor_x_count[i] = static_cast<float>(i) * x_stride + x_offset;

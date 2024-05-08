@@ -18,10 +18,15 @@ void PreprocessPoints::preprocess(const float* in_points_array, int in_num_point
   initializeVariables(coor_to_pillaridx, sparse_pillar_map, pillar_x, pillar_y, pillar_z, pillar_i, x_coors_for_sub_shaped,
                       y_coors_for_sub_shaped);
 
-//NUM_BOX_CORNERS_：每个点的起始索引
-//MIN_X_RANGE_：点云数据的最小x值范围
+//NUM_BOX_CORNERS_：4
+//MIN_X_RANGE_：点云数据的x方向的最小坐标值
+//MIN_X_RANGE_(0.0f),
+//MIN_Y_RANGE_(-39.68f),
 //遍历所有点，计算每个点所在的grid的xyz
   for (int i = 0; i < in_num_points; i++) {
+	  //NUM_BOX_CORNERS_：number of corners for 2D box = 4
+	  //each point contains 4 values in the input array: x y z i
+	  //not sure about the meaning of using that variable!
     int x_coor = std::floor((in_points_array[i * NUM_BOX_CORNERS_ + 0] - MIN_X_RANGE_) / PILLAR_X_SIZE_);
     int y_coor = std::floor((in_points_array[i * NUM_BOX_CORNERS_ + 1] - MIN_Y_RANGE_) / PILLAR_Y_SIZE_);
     int z_coor = std::floor((in_points_array[i * NUM_BOX_CORNERS_ + 2] - MIN_Z_RANGE_) / PILLAR_Z_SIZE_);

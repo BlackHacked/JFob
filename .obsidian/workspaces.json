@@ -1,0 +1,448 @@
+{
+  "workspaces": {
+    "pointpillars": {
+      "main": {
+        "id": "c87086e6cf2f674d",
+        "type": "split",
+        "children": [
+          {
+            "id": "4db63ad4935cbb35",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e2526b07fe3487b0",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "start/PointPillars- Fast Encoders for Object Detection from Point Clouds.pdf"
+                  }
+                }
+              },
+              {
+                "id": "4aefc8b5380780e2",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "point cloud/Voxelnet.pdf"
+                  }
+                }
+              },
+              {
+                "id": "218f636a9cb616b4",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "start/SSD- Single Shot MultiBox Detector.pdf"
+                  }
+                }
+              },
+              {
+                "id": "7dbdc029893fe398",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "canvas/apollo.canvas",
+                    "viewState": {
+                      "x": 4280.261054209322,
+                      "y": 14038.516568215524,
+                      "zoom": -1.2094118886250924
+                    }
+                  }
+                }
+              },
+              {
+                "id": "f2251899329970c5",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "start/PointNet.pdf"
+                  }
+                }
+              },
+              {
+                "id": "4a77510a9b5665ba",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "point cloud/Pointnet++.pdf"
+                  }
+                }
+              },
+              {
+                "id": "d3ed98637a18851a",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "point cloud/second.pdf"
+                  }
+                }
+              }
+            ],
+            "currentTab": 3,
+            "stacked": true
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "ae94f8c7bad86eea",
+        "type": "split",
+        "children": [
+          {
+            "id": "3da54419b2795bb7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "1ad28d41b5239252",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "81dd919cbe3a87f0",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "680899a1e2586b75",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 258.5,
+        "collapsed": true
+      },
+      "right": {
+        "id": "c7815b91d911e1a1",
+        "type": "split",
+        "children": [
+          {
+            "id": "27338383aee796ec",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e17d99ab91be3cf0",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "canvas/apollo.canvas",
+                    "collapseAll": true,
+                    "extraContext": true,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "f6435a76080e32bd",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "canvas/apollo.canvas",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": false
+                  }
+                }
+              },
+              {
+                "id": "c1545d23f4fa72af",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "866b3fea591322e3",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "canvas/apollo.canvas"
+                  }
+                }
+              },
+              {
+                "id": "c93ba88296ba774e",
+                "type": "leaf",
+                "state": {
+                  "type": "review-queue-list-view",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 2
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "obsidian-spaced-repetition:Review flashcards": false,
+          "obsidian-advanced-slides:Show Slide Preview": false,
+          "obsidian-excalidraw-plugin:Create new drawing": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "7dbdc029893fe398"
+    },
+    "papers": {
+      "main": {
+        "id": "c87086e6cf2f674d",
+        "type": "split",
+        "children": [
+          {
+            "id": "4db63ad4935cbb35",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e2526b07fe3487b0",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "start/PointPillars- Fast Encoders for Object Detection from Point Clouds.pdf"
+                  }
+                }
+              },
+              {
+                "id": "4aefc8b5380780e2",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "point cloud/Voxelnet.pdf"
+                  }
+                }
+              },
+              {
+                "id": "f2251899329970c5",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "start/PointNet.pdf"
+                  }
+                }
+              },
+              {
+                "id": "4a77510a9b5665ba",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "point cloud/Pointnet++.pdf"
+                  }
+                }
+              },
+              {
+                "id": "d3ed98637a18851a",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "point cloud/second.pdf"
+                  }
+                }
+              },
+              {
+                "id": "2df8a269ba2c9217",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "point cloud/faster r-cnn.pdf"
+                  }
+                }
+              }
+            ],
+            "currentTab": 5,
+            "stacked": true
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "ae94f8c7bad86eea",
+        "type": "split",
+        "children": [
+          {
+            "id": "3da54419b2795bb7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "1ad28d41b5239252",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "81dd919cbe3a87f0",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "680899a1e2586b75",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 258.5,
+        "collapsed": true
+      },
+      "right": {
+        "id": "c7815b91d911e1a1",
+        "type": "split",
+        "children": [
+          {
+            "id": "27338383aee796ec",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e17d99ab91be3cf0",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "point cloud/faster r-cnn.pdf",
+                    "collapseAll": true,
+                    "extraContext": true,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "f6435a76080e32bd",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "point cloud/faster r-cnn.pdf",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": false
+                  }
+                }
+              },
+              {
+                "id": "c1545d23f4fa72af",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "866b3fea591322e3",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "point cloud/faster r-cnn.pdf"
+                  }
+                }
+              },
+              {
+                "id": "c93ba88296ba774e",
+                "type": "leaf",
+                "state": {
+                  "type": "review-queue-list-view",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 2
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "obsidian-spaced-repetition:Review flashcards": false,
+          "obsidian-advanced-slides:Show Slide Preview": false,
+          "obsidian-excalidraw-plugin:Create new drawing": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "2df8a269ba2c9217"
+    }
+  },
+  "active": "pointpillars"
+}

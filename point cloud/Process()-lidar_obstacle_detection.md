@@ -13,7 +13,7 @@ LidarProcessResult LidarObstacleDetection::Process(const LidarObstacleDetectionO
 
 //Macro：开始
   PERCEPTION_PERF_BLOCK_START();
-  
+
   PointCloudPreprocessorOptions preprocessor_options;
   preprocessor_options.sensor2novatel_extrinsics = options.sensor2novatel_extrinsics;
 

@@ -43,3 +43,7 @@ void NMSCuda::doNMSCuda(const int host_filter_count,
   GPU_CHECK(cudaFree(dev_mask));
 }
 ```
+- `host_filter_count`：输入参数，要进行NMS处理的过滤器数量。
+- `dev_sorted_box_for_nms`：输入参数，存储了排序的用于NMS的边界框数据的设备内存的指针。
+- `out_keep_inds`：输出参数，保存NMS结果保留的边界框索引的设备内存的指针。
+- `out_num_to_keep`：输出参数，NMS结果中保留的边界框数量。

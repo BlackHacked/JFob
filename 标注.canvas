@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"8b08c19afbd12712","x":-103,"y":-159,"width":250,"height":60,"type":"text","text":""},
+		{"id":"90bd4799542ddf5a","x":-178,"y":-240,"width":400,"height":400,"type":"file","file":"标注工具.md"},
+		{"id":"d433a403de2a9173","x":-760,"y":100,"width":400,"height":400,"type":"file","file":"attachments/一汽解放视觉3D目标检测标注规则-2024更新.pdf"},
+		{"id":"3a0de3b7f3139dd9","x":-1100,"y":270,"width":250,"height":60,"type":"text","text":"需求"}
+	],
+	"edges":[
+		{"id":"4c8a54a0ab2f897d","fromNode":"d433a403de2a9173","fromSide":"right","toNode":"90bd4799542ddf5a","toSide":"left"},
+		{"id":"07842fb528f1c7a7","fromNode":"3a0de3b7f3139dd9","fromSide":"right","toNode":"d433a403de2a9173","toSide":"left"}
+	]
+}

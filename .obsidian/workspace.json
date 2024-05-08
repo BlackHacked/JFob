@@ -11,8 +11,12 @@
             "id": "8d40e75982532e0b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "MMDetection3D 配置过程.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
@@ -82,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "MMDetection3D 配置过程.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -98,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "MMDetection3D 配置过程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -119,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "MMDetection3D 配置过程.md"
+              }
             }
           },
           {
@@ -175,61 +183,61 @@
   },
   "active": "8d40e75982532e0b",
   "lastOpenFiles": [
-    "MMDetection3D 配置过程.md",
-    "point cloud/TersorRT C++ API.md",
-    "github.md",
-    "attachments/截屏2024-05-08 13.47.08.png",
-    "daily note/2024-05-08.md",
+    "配置VsCode服务器.md",
+    "知识数据抽取处理流程说明文档.md",
     "标注工具.md",
     "标注.canvas",
+    "显卡驱动相关-ubuntu.md",
+    "ros/改rospackage.pdf",
+    "point cloud/部署代码到ros package.md",
+    "point cloud/速腾16线雷达使用手册.pdf",
+    "point cloud/车间实习.md",
+    "point cloud/见习期答辩.md",
+    "point cloud/系统内核更新导致的显卡驱动连接不上.md",
+    "point cloud/知识图谱.md",
+    "point cloud/激光雷达感知算法.pptx",
+    "point cloud/激光雷达感知算法.pdf",
+    "point cloud/激光雷达反射强度分离.md",
+    "point cloud/文件只读无法保存的解决办法.md",
+    "point cloud/基于激光雷达的pointpillaers障碍物感知算法解释文档.md",
+    "point cloud/可行驶区域项目看板.md",
+    "point cloud/卸载显卡驱动以及重新安装.md",
+    "point cloud/切片.md",
+    "point cloud/visualization_msgs_Marker Documentation.pdf",
+    "point cloud/urban_road_filter项目看板.md",
+    "point cloud/urban_road_filter开发文档.md",
+    "point cloud/urban-road-filter.pptx",
+    "point cloud/urban road filter.md",
+    "point cloud/sort_boxes_by_indexes_kernel.md",
+    "point cloud/shuffle.md",
+    "point cloud/sensors_paper_urban_road_filter.pdf",
+    "point cloud/sensor_msgs_PointCloud2 Documentation.pdf",
+    "point cloud/semantic kitti.pdf",
+    "point cloud/second.pdf",
+    "point cloud/scene flow.md",
+    "point cloud/ros spin.md",
+    "point cloud/pytorch Feedforward Neural Network.md",
+    "point cloud/putAnchorsInDeviceMemory().md",
+    "point cloud/nebula graph database.md",
+    "point cloud/linefit_ground_segmentation开发文档.md",
+    "llm/知识库检索过程.png",
+    "ground filtering code.canvas",
+    "canvas/JF.canvas",
+    "attachments/点的索引.png",
+    "attachments/截屏2024-05-08 13.47.08.png",
     "attachments/截屏2024-05-06 15.40.07.png",
     "attachments/截屏2024-05-06 15.06.42.png",
-    "nebula-python.md",
-    "Ubuntu启动后突然进入tty，无法进入图形界面_ubuntu桌面tty1进不去.md",
+    "attachments/截屏2024-04-30 10.54.23.png",
+    "attachments/截屏2024-04-30 10.40.35.png",
+    "attachments/截屏2023-12-14 14.29.59.png",
     "attachments/Pasted image 20240430144124.png",
     "attachments/Pasted image 20240430143119.png",
-    "attachments/Pasted image 20240430143043.png",
-    "attachments/Pasted image 20240430133836.png",
-    "attachments/Pasted image 20240430131825.png",
-    "attachments/一汽解放视觉3D目标检测标注规则-2024更新.pdf",
-    "attachments/Pasted image 20240430105832.png",
-    "attachments/Pasted image 20240430105817.png",
-    "MMDetection3D openmmlab环境搭建及模拟kitti数据集跑pointpillars模型.md",
-    "Untitled Kanban.md",
-    "daily note/2024-04-30.md",
-    "知识数据抽取处理流程说明文档.md",
-    "daily note/2024-04-29.md",
-    "daily note/2024-04-28.md",
-    "Demystifying Graph Databases Analysis and Taxonomy of Data Organization, System Designs, and Graph Queries.md",
-    "daily note/2024-04-24.md",
-    "daily note/2024-04-22.md",
-    "point cloud/nebula graph database.md",
-    "NebulaGraph Importer - NebulaGraph Database 手册.md",
-    "daily note/2024-04-15.md",
-    "daily note/2024-04-11.md",
-    "daily note/2024-04-10.md",
-    "显卡驱动相关-ubuntu.md",
-    "配置VsCode服务器.md",
-    "适用于Ubuntu的快速安装显卡驱动指南_ubuntu 连接本机显卡-CSDN博客.md",
-    "Updating NVIDIA Drivers Offline (Ubuntu) - Safran - Navigation & Timing.md",
-    "VS Code server.md",
-    "ground filtering code.canvas",
+    "Lidar for autonomous driving.canvas",
     "hardware.canvas",
     "urban road filter.canvas",
     "deep learning.canvas",
     "canvas/Ground Segmentation Methods for AutomotiveLiDAR Sensors.canvas",
-    "Lidar for autonomous driving.canvas",
-    "canvas/JF.canvas",
-    "graph/graphsage.pdf",
-    "graph",
-    "point cloud/sensors_paper_urban_road_filter.pdf",
-    "point cloud/Off-Road LiDAR Intensity Based Semantic Segmentation.pdf",
-    "dataset/kitti/Vision meets Robotics- The KITTI Dataset.pdf",
-    "point cloud/Fast_segmentation_of_3D_point_clouds_for_ground_vehicles.pdf",
-    "point cloud/~$urban-road-filter.pptx",
-    "point cloud/激光雷达感知算法.pdf",
     "canvas/apollo.canvas",
-    "point cloud/visualization_msgs_Marker Documentation.pdf",
     "pointpillars anchor-related apollo.canvas"
   ]
 }

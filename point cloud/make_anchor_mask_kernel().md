@@ -27,7 +27,7 @@ __global__ void make_anchor_mask_kernel(
   anchor_coor[3] =
       floor((dev_box_anchors_max_y[tid] - MIN_Y_RANGE) / PILLAR_Y_SIZE);
 
-//限制锚点的位置
+//限制锚框的位置
   anchor_coor[0] = max(anchor_coor[0], 0);
   anchor_coor[1] = max(anchor_coor[1], 0);
   anchor_coor[2] = min(anchor_coor[2], GRID_X_SIZE_1);

@@ -17,17 +17,13 @@ __global__ void nms_kernel(const int n_boxes, const float nms_overlap_thresh,
   __shared__ float block_boxes[NUM_THREADS_MACRO * NUM_2D_BOX_CORNERS_MACRO];
   if (threadIdx.x < col_size) {
     block_boxes[threadIdx.x * NUM_BOX_CORNERS + 0] =
-        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS +
-                  0];
+        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS + 0];
     block_boxes[threadIdx.x * NUM_BOX_CORNERS + 1] =
-        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS +
-                  1];
+        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS + 1];
     block_boxes[threadIdx.x * NUM_BOX_CORNERS + 2] =
-        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS +
-                  2];
+        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS + 2];
     block_boxes[threadIdx.x * NUM_BOX_CORNERS + 3] =
-        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS +
-                  3];
+        dev_boxes[(block_threads * col_start + threadIdx.x) * NUM_BOX_CORNERS + 3];
   }
   __syncthreads();
 

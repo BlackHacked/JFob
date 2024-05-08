@@ -4,7 +4,8 @@
     "flashcardGoodText": "Good",
     "flashcardHardText": "Hard",
     "flashcardTags": [
-      "#名词解释"
+      "#名词解释",
+      "#flashcards"
     ],
     "convertFoldersToDecks": false,
     "cardCommentOnSameLine": false,
@@ -38,7 +39,7 @@
     "maxLinkFactor": 1,
     "showDebugMessages": false
   },
-  "buryDate": "2023-05-09",
+  "buryDate": "2023-08-23",
   "buryList": [],
   "historyDeck": null
 }

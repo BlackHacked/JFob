@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"5e591c209b0f8571","type":"file","file":"point cloud/Deployment.md","x":1880,"y":-480,"width":480,"height":400},
+		{"id":"94242d644037d6a0","type":"text","text":"prepare data","x":-1080,"y":-720,"width":160,"height":60},
+		{"id":"6911460054c7c39c","type":"text","text":"build/pick a model","x":-80,"y":-720,"width":221,"height":60},
+		{"id":"8fd4a838399f2c51","type":"text","text":"improve model through experimentation/deployment","x":1880,"y":-720,"width":480,"height":60},
+		{"id":"6ed5c58e8b510f85","type":"file","file":"point cloud/Algorithms.md","x":-80,"y":-440,"width":900,"height":400},
+		{"id":"d71eaa6a4522cfb6","type":"file","file":"point cloud/Datasets.md","x":-1080,"y":-440,"width":900,"height":400},
+		{"id":"577496a060f97bd9","type":"file","file":"point cloud/Point Cloud.md","x":-1080,"y":40,"width":900,"height":400},
+		{"id":"0d1c642c5b1e738a","type":"file","file":"point cloud/Hardware.md","x":-1080,"y":520,"width":900,"height":400},
+		{"id":"62e4d43aa6cfb830","type":"text","text":"fit model to data to make a prediction","x":920,"y":-720,"width":221,"height":60},
+		{"id":"70f1a63a0e34932b","type":"text","text":"model evaluation","x":1400,"y":-720,"width":221,"height":60},
+		{"id":"bbfd41fa631012d8","type":"file","file":"canvas/JF.canvas","x":-80,"y":-1360,"width":2440,"height":400}
+	],
+	"edges":[
+		{"id":"49639bdd620033b1","fromNode":"94242d644037d6a0","fromSide":"right","toNode":"6911460054c7c39c","toSide":"left"},
+		{"id":"b6bd76bdcf844419","fromNode":"6911460054c7c39c","fromSide":"right","toNode":"62e4d43aa6cfb830","toSide":"left"},
+		{"id":"7b9247f0fec19d9b","fromNode":"62e4d43aa6cfb830","fromSide":"right","toNode":"70f1a63a0e34932b","toSide":"left"},
+		{"id":"dba4f6fce860c273","fromNode":"70f1a63a0e34932b","fromSide":"right","toNode":"8fd4a838399f2c51","toSide":"left"}
+	]
+}
