@@ -2,7 +2,14 @@
   "readableLineLength": true,
   "attachmentFolderPath": "attachments",
   "newFileLocation": "folder",
-  "newFileFolderPath": "point cloud",
+  "newFileFolderPath": "/",
   "alwaysUpdateLinks": true,
-  "strictLineBreaks": false
+  "strictLineBreaks": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
