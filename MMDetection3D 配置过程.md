@@ -124,7 +124,7 @@ python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FILE}] [-
 ```
 
 ```python
-python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth --work-dir ./data/result_output/out_dir/3dssd.pkl  --cfg-options 'show=True' 'out_dir=./data/result_output/show_result'
+ /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth --work-dir ./data/result_output/out_dir/3dssd.pkl  --cfg-options 'show=True' 'out_dir=./data/result_output/show_result'
 ```
 
 # 推理
