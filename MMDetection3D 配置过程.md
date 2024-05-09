@@ -46,7 +46,7 @@ mim install 'mmcv>=2.0.0rc4'
 ```bash
 mim install 'mmdet>=3.0.0'
 ```
-5. 安装 MMDetection3D
+5. 安装 MMDetection3D(验证)
 因为要开发并直接运行 mmdet3d，从源码安装它
 如下命令是直接通过git拉取源码
 ```bash
@@ -117,15 +117,31 @@ python tools/analysis_tools/analyze_logs.py plot_curve work_dirs/pointpillars_hv
 ```
 
 # 测试
-## 
+## 命令
 
 ```python
 python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FILE}] [--eval ${EVAL_METRICS}] [--show] [--show-dir ${SHOW_DIR}]
 ```
 
 ```python
- /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth --work-dir ./data/result_output/out_dir/3dssd.pkl  --cfg-options 'show=True' 'out_dir=./data/result_output/show_result'
+ python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth --work-dir ./data/result_output/out_dir/3dssd.pkl  --cfg-options 'show=True' 'out_dir=./data/result_output/show_result'
 ```
+
+```python
+python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_40.pth --work-dir ./data/result_output/out_dir/3dssd.pkl  --cfg-options 'show=True' 'out_dir=./data/result_output/show_result'
+```
+## 命令涉及到的文件路径
+#### config file 配置文件
+文件名：pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py
+示例路径：mmdetection/configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py
+
+#### checkpoint 检查点文件
+文件名：epoch_1.pth
+示例路径：mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth
+
+#### result 模型文件
+文件名：3dssd.pkl
+示例路径：mmdetection3d/data/result_output/out_dir/3dssd.pkl
 
 # 推理
 ```python
@@ -133,3 +149,8 @@ python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti
 
 python demo/pcd_demo.py demo/data/kitti/000008.bin configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_80.pth --show
 ```
+
+```python
+python demo/pcd_demo.py demo/data/kitti/000008.bin configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_40.pth --show
+```
+
