@@ -86,15 +86,29 @@ vim pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py
 
 以下参数设置供参考
 ```python
-lr = 0.05
-epoch_num = 40
+lr = 0.001
+epoch_num = 120
 train_cfg = dict(by_epoch=True, max_epochs=epoch_num, val_interval=2)
 ```
 ## 命令
-```bash
+```shell
 python ./tools/train.py ./configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py
 ```
+
 >建议使用nohup/tmux
+
+
+## 恢复训练
+### 模板
+```shell
+python tools/train.py ${CONFIG_FILE} --resume work_dirs/lenet5_mnist/epoch_4.pth
+```
+
+### 命令
+```bash
+python ./tools/train.py ./configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py --resume work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_80.pth
+```
+
 
 ## 分类和边界框损失曲线
 ```bash
@@ -139,14 +153,19 @@ python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti
 文件名：epoch_1.pth
 示例路径：mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth
 
-#### result 模型文件
+#### result 
 文件名：3dssd.pkl
 示例路径：mmdetection3d/data/result_output/out_dir/3dssd.pkl
 
 # 推理
+## test结果可视化
 ```python
 python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth --show --show-dir /data/result_output/show_result
+```
 
+
+## 单帧推理
+```python
 python demo/pcd_demo.py demo/data/kitti/000008.bin configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_80.pth --show
 ```
 
