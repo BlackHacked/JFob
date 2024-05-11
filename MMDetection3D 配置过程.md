@@ -122,6 +122,11 @@ python tools/train.py ${CONFIG_FILE} --resume work_dirs/lenet5_mnist/epoch_4.pth
 python ./tools/train.py ./configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py --resume work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_80.pth
 ```
 
+        run: |
+          git config --global user.email "your-email"
+          git config --global user.name "your-id"
+          git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
+
 
 ## 分类和边界框损失曲线
 ```bash
