@@ -20,7 +20,7 @@ shell level 是 1 则可以进行下一步。
 ## pytorch安装
 ## 安装过程
 ```bash
-conda create --name openmmlab
+conda create -n openmmlab python=3.8 -y
 conda activate openmmlab
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
@@ -33,7 +33,7 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvi
 
 ## 环境验证
 ```bash
-print(torch.cuda.is_available(), torch.version.cuda, torch.__version__)
+python -c "import torch; print(torch.cuda.is_available(), torch.version.cuda, torch.__version__)"
 ```
 ![[Pasted image 20240430143119.png]]
 
@@ -55,8 +55,6 @@ mim install mmengine
 ```bash
 mim install 'mmcv>=2.0.0rc4'
 ```
-![[Pasted image 20240430144124.png]]
-这一步可能会慢一点，耐心等待。
 4. 安装mmdet
 ```bash
 mim install 'mmdet>=3.0.0'
@@ -123,6 +121,11 @@ python tools/train.py ${CONFIG_FILE} --resume work_dirs/lenet5_mnist/epoch_4.pth
 ```bash
 python ./tools/train.py ./configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py --resume work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_80.pth
 ```
+
+        run: |
+          git config --global user.email "your-email"
+          git config --global user.name "your-id"
+          git config --global url.https://${{ secrets.PAT }}@github.com/.insteadOf https://github.com/
 
 
 ## 分类和边界框损失曲线
