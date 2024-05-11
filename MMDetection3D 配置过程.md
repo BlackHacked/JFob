@@ -32,6 +32,9 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvi
 >安装结果检查![[Pasted image 20240430143043.png]]
 
 ## 环境验证
+```bash
+print(torch.cuda.is_available(), torch.version.cuda, torch.__version__)
+```
 ![[Pasted image 20240430143119.png]]
 
 # 使用 [MIM](https://github.com/open-mmlab/mim) 安装 [MMEngine](https://github.com/open-mmlab/mmengine)，[MMCV](https://github.com/open-mmlab/mmcv) 和 [MMDetection](https://github.com/open-mmlab/mmdetection)
