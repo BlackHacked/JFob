@@ -5,6 +5,18 @@ driver 版本：535.154.05
 cuda 版本：V11.8.89
 ![[Pasted image 20240430105513.png]]
 
+# 创建虚拟环境
+```bash
+conda create --name openmmlab python=3.8 -y
+conda activate openmmlab
+```
+## 检查shell level
+在**虚拟环境内**输入命令
+```bash
+conda info
+```
+![[未命名_副本.png]]
+shell level 是 1 则可以进行下一步。
 ## pytorch安装
 ## 安装过程
 ```bash
@@ -153,9 +165,9 @@ python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti
 文件名：epoch_1.pth
 示例路径：mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth
 
-#### result 
+#### result 测试结果
 文件名：3dssd.pkl
-示例路径：mmdetection3d/data/result_output/out_dir/3dssd.pkl
+示例路径：（路径通过 --work-dir指定）mmdetection3d/data/result_output/out_dir/3dssd.pkl
 
 # 推理
 ## test结果可视化
