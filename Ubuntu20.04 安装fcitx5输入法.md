@@ -38,6 +38,11 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/hanrui/.local/share/f
 
 <table><tbody><tr><td><pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre></td><td><pre><span># 如果您使用的是旧版flatpak，在安装的时候会需要显示的指定软件仓库名字: flatpak install flathub org.fcitx.Fcitx5</span><br><span>flatpak install org.fcitx.Fcitx5</span><br><span># 安装 fcitx5 输入法引擎, 例如fcitx5-chinese-addons, or mozc</span><br><span>flatpak install org.fcitx.Fcitx5.Addon.ChineseAddons # 中文输入法</span><br><span># flatpak install org.fcitx.Fcitx5.Addon.Mozc			 # 日文输入法</span><br></pre></td></tr></tbody></table>
 
+Looking for matches…
+F: An error was encountered searching remote ‘flathub’ for ‘org.fcitx.Fcitx5.Addon.ChineseAddons’: Unable to load summary from remote flathub: While fetching https://dl.flathub.org/repo/summary.idx: [6] Couldn't resolve host name
+F: An error was encountered searching remote ‘flathub’ for ‘org.fcitx.Fcitx5.Addon.ChineseAddons’: Unable to load summary from remote flathub: While fetching https://dl.flathub.org/repo/summary.idx: [6] Couldn't resolve host name
+error: No remote refs found for ‘org.fcitx.Fcitx5.Addon.ChineseAddons’
+
 ### [](#安装ficitx5后端)安装ficitx5后端
 
 <table><tbody><tr><td><pre><span>1</span><br></pre></td><td><pre><span>sudo apt install fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5</span><br></pre></td></tr></tbody></table>
