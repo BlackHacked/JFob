@@ -151,7 +151,7 @@ python tools/analysis_tools/analyze_logs.py plot_curve work_dirs/pointpillars_hv
 # 测试
 ## 命令
 
-```python
+```bash
 python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [--out ${RESULT_FILE}] [--eval ${EVAL_METRICS}] [--show] [--show-dir ${SHOW_DIR}]
 ```
 
@@ -177,17 +177,21 @@ python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti
 
 # 推理
 ## test结果可视化
-```python
+```bash
 python tools/test.py configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_1.pth --show --show-dir /data/result_output/show_result
+```
+
+```bash
+
 ```
 
 
 ## 单帧推理
-```python
+```bash
 python demo/pcd_demo.py demo/data/kitti/000008.bin configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py /data/Projects/python_workplace/mmdetection3d/work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_80.pth --show
 ```
 
-```python
+```bash
 python demo/pcd_demo.py demo/data/kitti/000008.bin configs/pointpillars/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class.py work_dirs/pointpillars_hv_secfpn_8xb6-160e_kitti-3d-3class/epoch_40.pth --show
 ```
 
