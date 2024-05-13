@@ -30,6 +30,9 @@ Note that the directories
 are not in the search path set by the XDG_DATA_DIRS environment variable, so
 applications installed by Flatpak may not appear on your desktop until the
 session is restarted.
+### 解决方案
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/hanrui/.local/share/flatpak/exports/share:${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
+写入bashrc
 
 ### [](#从flatpak安装fcitx)从flatpak安装fcitx
 
