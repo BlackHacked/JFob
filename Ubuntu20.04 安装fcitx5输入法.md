@@ -22,6 +22,14 @@ reboot
 ### [](#添加-flatub-仓库)添加 flatub 仓库,
 
 <table><tbody><tr><td><pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></pre></td><td><pre><span># 添加 flatub 仓库, fcitx5-unstable 也会依赖一些这个仓库中的运行时软件包。</span><br><span>flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</span><br><span># 可选部分: 如果你想要使用不稳定版本的fcitx5，也可以添加 fcitx5 非稳定仓库。</span><br><span># flatpak remote-add --user --if-not-exists fcitx5-unstable https://flatpak.fcitx-im.org/unstable-repo/fcitx5-unstable.flatpakrepo</span><br></pre></td></tr></tbody></table>
+Note that the directories 
+
+'/var/lib/flatpak/exports/share'
+'/home/hanrui/.local/share/flatpak/exports/share'
+
+are not in the search path set by the XDG_DATA_DIRS environment variable, so
+applications installed by Flatpak may not appear on your desktop until the
+session is restarted.
 
 ### [](#从flatpak安装fcitx)从flatpak安装fcitx
 
