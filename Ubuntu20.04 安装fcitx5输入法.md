@@ -5,6 +5,7 @@
 [](#序)序
 -------
 
+
 ubuntu 20.04.3下fcitx5 需要从flatpak安装，（由于qt版本，fcitx5-config只能安装在20.10上），中间出了各种问题，最后发现以下解决方案最好：
 
 [](#安装flatpak)[安装flatpak](https://flatpak.org/setup/Ubuntu)
@@ -37,11 +38,12 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/hanrui/.local/share/f
 ### [](#从flatpak安装fcitx)从flatpak安装fcitx
 
 <table><tbody><tr><td><pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre></td><td><pre><span># 如果您使用的是旧版flatpak，在安装的时候会需要显示的指定软件仓库名字: flatpak install flathub org.fcitx.Fcitx5</span><br><span>flatpak install org.fcitx.Fcitx5</span><br><span># 安装 fcitx5 输入法引擎, 例如fcitx5-chinese-addons, or mozc</span><br><span>flatpak install org.fcitx.Fcitx5.Addon.ChineseAddons # 中文输入法</span><br><span># flatpak install org.fcitx.Fcitx5.Addon.Mozc			 # 日文输入法</span><br></pre></td></tr></tbody></table>
-
+jklj
 Looking for matches…
 F: An error was encountered searching remote ‘flathub’ for ‘org.fcitx.Fcitx5.Addon.ChineseAddons’: Unable to load summary from remote flathub: While fetching https://dl.flathub.org/repo/summary.idx: [6] Couldn't resolve host name
 F: An error was encountered searching remote ‘flathub’ for ‘org.fcitx.Fcitx5.Addon.ChineseAddons’: Unable to load summary from remote flathub: While fetching https://dl.flathub.org/repo/summary.idx: [6] Couldn't resolve host name
 error: No remote refs found for ‘org.fcitx.Fcitx5.Addon.ChineseAddons’
+
 
 ### [](#安装ficitx5后端)安装ficitx5后端
 
@@ -52,6 +54,9 @@ error: No remote refs found for ‘org.fcitx.Fcitx5.Addon.ChineseAddons’
 ![](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/fcitx5-ubuntu/image-20220211133357854.png "image-20220211133357854")
 
 ### [](#配置环境变量通用办法)[配置环境变量:(通用办法)](https://fcitx-im.org/wiki/Setup_Fcitx_5)
+
+
+
 
 <table><tbody><tr><td><pre><span>1</span><br><span>2</span><br><span>3</span><br></pre></td><td><pre><span>export XMODIFIERS=@im=fcitx</span><br><span>export GTK_IM_MODULE=fcitx</span><br><span>export QT_IM_MODULE=fcitx</span><br></pre></td></tr></tbody></table>
 
