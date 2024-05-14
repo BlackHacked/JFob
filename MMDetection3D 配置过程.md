@@ -10,13 +10,7 @@ cuda 版本：V11.8.89
 conda create --name openmmlab python=3.8 -y
 conda activate openmmlab
 ```
-## 检查shell level
-在**虚拟环境内**输入命令
-```bash
-conda info
-```
-![[未命名_副本.png]]
-shell level 是 1 则可以进行下一步。
+
 ## pytorch安装
 ## 安装过程
 ```bash
